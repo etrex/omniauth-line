@@ -6,7 +6,10 @@ module OmniAuth
   module Strategies
     class Line < OmniAuth::Strategies::OAuth2
       option :name, 'line'
+
+      option :authorize_options, [:scope, :bot_prompt]
       option :scope, 'profile openid'
+      option :bot_prompt, 'aggressive'
 
       option :token_params, {
         grant_type: 'authorization_code'
